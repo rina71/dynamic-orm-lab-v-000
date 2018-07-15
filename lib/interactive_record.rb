@@ -64,7 +64,7 @@ class InteractiveRecord
     FROM #{self.table_name}
     WHERE #{col_name} = #{value}
     SQL
-
+    binding.pry
     DB[:conn].execute(sql)
   end
 end
