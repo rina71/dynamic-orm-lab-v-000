@@ -54,10 +54,11 @@ class InteractiveRecord
     # binding.pry
     col_name = hash.keys[0].to_s
     value = hash.values[0]
+    # formatted_value = value.class == Fixnum ? value : "'#{value}'"
     if value.is_a? Numeric
-      value
+      formatted_value = value
     else
-      value.gsub(/./) {|s| s + ' '}
+      formatted_value = value : "'#{value}'"
     end
 
     sql = <<-SQL
