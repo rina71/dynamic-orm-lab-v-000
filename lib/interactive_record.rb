@@ -55,6 +55,7 @@ class InteractiveRecord
     col_name = hash.keys[0].to_s
     value = hash.values[0]
     sql = <<-SQL
+    binding.pry
     SELECT *
     FROM #{self.table_name}
     WHERE #{col_name} = #{value}
