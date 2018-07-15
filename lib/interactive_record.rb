@@ -53,7 +53,11 @@ class InteractiveRecord
   def self.find_by(hash)
     # binding.pry
     col_name = hash.keys[0].to_s
-    value = hash.values[0]
+    if hash.values.is_a? Numeric
+    value = hash.values.map{ |e| "'" + e + "'" }[0]
+
+    else
+      value = hash.values[0]
 
     sql = <<-SQL
     SELECT *
