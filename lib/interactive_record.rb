@@ -58,7 +58,7 @@ class InteractiveRecord
     if value.is_a? Numeric
       formatted_value = value
     else
-      formatted_value += "'#{value}'"
+      formatted_value = "'#{value}'"
     end
 
     sql = <<-SQL
