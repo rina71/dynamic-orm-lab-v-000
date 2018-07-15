@@ -53,7 +53,7 @@ class InteractiveRecord
   def self.find_by(hash)
     # binding.pry
     col_name = hash.keys[0].to_s
-    value = hash.values
+    value = hash.values[0]
     if value.is_a? Numeric
       value
     else
