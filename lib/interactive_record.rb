@@ -54,15 +54,15 @@ class InteractiveRecord
     # binding.pry
     col_name = hash.keys[0].to_s
     if hash.values.is_a? Numeric
-      value = hash.values.map{ |e| "'" + e + "'" }[0]
+      value = hash.values
 
     else
-      value = hash.values[0]
+      value = hash.values.map{ |e| "'" + e + "'" }[0]
     end
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE #{col_name} = '#{value}'
+    WHERE #{col_name} = #{value}
     SQL
     binding.pry
     DB[:conn].execute(sql)
