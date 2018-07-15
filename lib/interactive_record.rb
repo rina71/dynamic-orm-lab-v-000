@@ -55,7 +55,6 @@ class InteractiveRecord
     col_name = hash.keys[0].to_s
     if hash.values.is_a? Numeric
       value = hash.values
-
     else
       value = hash.values.map{ |e| "'" + e + "'" }[0]
     end
@@ -64,7 +63,7 @@ class InteractiveRecord
     FROM #{self.table_name}
     WHERE #{col_name} = #{value}
     SQL
-  
+    binding.pry
     DB[:conn].execute(sql)
   end
 end
