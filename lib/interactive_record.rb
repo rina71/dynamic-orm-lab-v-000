@@ -57,7 +57,7 @@ class InteractiveRecord
     if value.is_a? Numeric
       value
     else
-      value.gsub(/./) {|s| s + ' '} 
+      value.gsub(/./) {|s| s + ' '}
     end
 
     sql = <<-SQL
@@ -65,7 +65,7 @@ class InteractiveRecord
     FROM #{self.table_name}
     WHERE #{col_name} = #{value}
     SQL
-
+    binding.pry
     DB[:conn].execute(sql)
   end
 end
