@@ -54,7 +54,7 @@ class InteractiveRecord
     # binding.pry
     col_name = hash.keys[0].to_s
     value = hash.values[0]
-binding.pry
+
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
