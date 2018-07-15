@@ -52,12 +52,12 @@ class InteractiveRecord
 
   def self.find_by(hash)
     binding.pry
-    col_name = hash.keys.to_s 
+    col_name = hash.keys.to_s
     value = hash.values
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE 
+    WHERE
     SQL
 
     DB[:conn].execute(sql)
