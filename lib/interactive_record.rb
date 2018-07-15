@@ -64,7 +64,7 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE #{col_name} = #{value}
+    WHERE #{col_name} = #{formatted_value}
     SQL
     binding.pry
     DB[:conn].execute(sql)
