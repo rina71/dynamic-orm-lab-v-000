@@ -54,7 +54,7 @@ class InteractiveRecord
     # binding.pry
     col_name = hash.keys[0].to_s
     if hash.values.is_a? Numeric
-    value = hash.values.map{ |e| "'" + e + "'" }[0]
+      value = hash.values.map{ |e| "'" + e + "'" }[0]
 
     else
       value = hash.values[0]
