@@ -58,7 +58,7 @@ class InteractiveRecord
 
     else
       value = hash.values[0]
-
+    end
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
