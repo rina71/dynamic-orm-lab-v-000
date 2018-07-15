@@ -58,7 +58,7 @@ class InteractiveRecord
       value
     else
       value.map{ |e| "'" + e + "'" }
-
+    end
     sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
