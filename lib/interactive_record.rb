@@ -66,7 +66,7 @@ class InteractiveRecord
     FROM #{self.table_name}
     WHERE #{col_name} = #{formatted_value}
     SQL
-    binding.pry
+    # binding.pry
     DB[:conn].execute(sql)
   end
 end
